@@ -1,0 +1,6 @@
+@PhoneNumber_Assessment_Dom_HostAddress = http://localhost:5262
+
+GET {{PhoneNumber_Assessment_Dom_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
