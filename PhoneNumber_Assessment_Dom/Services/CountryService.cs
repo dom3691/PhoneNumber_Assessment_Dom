@@ -14,7 +14,7 @@
             if (string.IsNullOrEmpty(phoneNumber) || phoneNumber.Length < 3)
                 return null;
 
-            // Extract country code dynamically
+            // extract the country code dynamically
             var country = _context.Countries
                 .FirstOrDefault(c => phoneNumber.StartsWith(c.CountryCode));
 
@@ -22,8 +22,7 @@
                 return null;
 
             var countryDetails = _context.CountryDetails
-                .Where(cd => cd.CountryId == country.Id)
-                .Select(cd => new
+                .Where(cd => cd.CountryId == country.Id).Select(cd => new
                 {
                     cd.Operator,
                     cd.OperatorCode
